@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.ModelBook;
 import model.ModelStudent;
 
 /**
@@ -164,8 +163,8 @@ public class BusinessStudent {
     }
 
     /**
-     * This function get a ModelStudent object parameter and send DELETE query to
-     * Query Class with viarable Object
+     * This function get a ModelStudent object parameter and send DELETE query
+     * to Query Class with viarable Object
      *
      * @param ModelStudent
      */

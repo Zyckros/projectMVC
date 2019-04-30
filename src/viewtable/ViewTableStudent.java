@@ -7,7 +7,6 @@ package viewtable;
 
 import Business.BusinessStudent;
 import javax.swing.table.AbstractTableModel;
-import model.ModelLending;
 import model.ModelStudent;
 
 /**
