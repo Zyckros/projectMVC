@@ -14,27 +14,50 @@ import java.sql.Statement;
  *
  * @author zyckros
  */
-public class Query {
+public final class Query {
 
-    private Connection con;
+    private static Connection con;
     private ResultSet resultset = null;
-    
-    
-    public Query(){
-        connection.openConnection();
-        con = connection.getConnection();
+
+    public Query() {
+        con = Connect.getConnection();
         System.out.println(con);
+
     }
-    
-    
-    public ResultSet selectQuery(String sql) throws SQLException{
-      try {
-            Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+    public ResultSet getResultSet() {
+        return resultset;
+    }
+
+    public static Connection getCon() {
+        return con;
+    }
+
+    public ResultSet selectQuery(String sql) throws SQLException {
+        try {
+            Statement stmt = con.createStatement();
             resultset = stmt.executeQuery(sql);
+
             return resultset;
 
         } catch (SQLException ex) {
             return null;
         }
     }
+
+    public int updateQuery(String sql) {
+        int i = 0;
+        System.out.println(sql);
+        try {
+            Statement stmt = con.createStatement();
+            i = stmt.executeUpdate(sql);
+
+        } catch (Exception ex) {
+            System.err.println(ex);
+            resultset = null;
+        }
+
+        return i;
+    }
+
 }

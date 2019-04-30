@@ -23,48 +23,37 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-              <Component id="jButtonBooks" min="-2" pref="110" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-              <Component id="jButtonLending" min="-2" pref="122" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-              <Component id="jButtonStudents" min="-2" pref="110" max="-2" attributes="0"/>
-              <EmptySpace pref="98" max="32767" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="503" max="-2" attributes="0"/>
-                  <EmptySpace pref="114" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                      <Component id="jButtonBooks" min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                      <Component id="jButtonStudents" min="-2" pref="136" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
+                      <Component id="jButtonLending" min="-2" pref="125" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
+              <EmptySpace pref="158" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace pref="314" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButtonBooks" min="-2" pref="74" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButtonLending" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                          <Component id="jButtonStudents" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                  </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="227" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButtonLending" pref="69" max="32767" attributes="0"/>
+                  <Component id="jButtonStudents" max="32767" attributes="0"/>
+                  <Component id="jButtonBooks" max="32767" attributes="0"/>
               </Group>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
-                  <EmptySpace pref="334" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,16 +76,16 @@
         <Property name="text" type="java.lang.String" value="APPLICATION TESTING MVC"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonLending">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="LENDING"/>
-        <Property name="actionCommand" type="java.lang.String" value="lending"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="jButtonStudents">
       <Properties>
         <Property name="text" type="java.lang.String" value="STUDENTS"/>
         <Property name="actionCommand" type="java.lang.String" value="students"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonLending">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="LENDING"/>
+        <Property name="actionCommand" type="java.lang.String" value="lending"/>
       </Properties>
     </Component>
   </SubComponents>

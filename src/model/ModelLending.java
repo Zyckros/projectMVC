@@ -5,21 +5,28 @@
  */
 package model;
 
-import java.util.Date;
-
-
+import java.sql.Date;
 
 /**
  *
  * @author zyckros
  */
 public class ModelLending {
-    
+
+    private int id;
     private String studentCode;
     private String bookCode;
-    private Date lendingDate;
-    private Date devolutionDate;
+    private String lendingDate;
+    private String devolutionDate;
     private String State;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getStudentCode() {
         return studentCode;
@@ -37,23 +44,22 @@ public class ModelLending {
         this.bookCode = bookCode;
     }
 
-    public Date getLendingDate() {
+    public String getLendingDate() {
         return lendingDate;
     }
 
-    public void setLendingDate(Date lendingDate) {
+    public void setLendingDate(String lendingDate) {
         this.lendingDate = lendingDate;
     }
 
-    public Date getDevolutionDate() {
+    public String getDevolutionDate() {
         return devolutionDate;
     }
 
-    public void setDevolutionDate(Date devolutionDate) {
+    public void setDevolutionDate(String devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
 
-    
     public String getState() {
         return State;
     }
@@ -61,7 +67,5 @@ public class ModelLending {
     public void setState(String State) {
         this.State = State;
     }
-    
-    
-    
+
 }

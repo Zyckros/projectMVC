@@ -7,7 +7,6 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import sun.awt.X11.Screen;
 import view.ViewInit;
 
 /**
@@ -16,19 +15,20 @@ import view.ViewInit;
  */
 public class ControllerMain implements ActionListener {
 
+    
     private final ViewInit viewInit = new ViewInit();
     private final ControllerBooks ctrlBooks;
     private final ControllerStudents ctrlStudents;
     private final ControllerLending ctrlLending;
 
+    
     public ControllerMain(ControllerBooks ctrlBooks, ControllerStudents ctrlStudents, ControllerLending ctrlLending) {
         this.ctrlBooks = ctrlBooks;
         this.ctrlLending = ctrlLending;
         this.ctrlStudents = ctrlStudents;
-        viewInit.setVisible(true);
-        viewInit.setLocationRelativeTo(null);
-        initComponents();
         
+        initComponents();
+        initProcess();
     }
 
     /**
@@ -40,10 +40,25 @@ public class ControllerMain implements ActionListener {
         viewInit.getjButtonStudents().addActionListener(this);
     }
 
+    /**
+     * This function init process of ViewInit
+     */
+    private void initProcess(){
+        viewInit.setVisible(true);
+        viewInit.setLocationRelativeTo(null);
+        
+    }
+    
+    /**
+     * This function set visible viewInit
+     */
     public void activeView() {
         viewInit.setVisible(true);
     }
 
+    /**
+     * this function set invisible ViewInit
+     */
     public void disableView() {
         viewInit.setVisible(false);
     }
@@ -59,7 +74,5 @@ public class ControllerMain implements ActionListener {
         if (e.getActionCommand().equalsIgnoreCase("students")) {
             ctrlStudents.activeView();
         }
-//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }

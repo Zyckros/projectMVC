@@ -9,8 +9,8 @@ package model;
  *
  * @author zyckros
  */
-public class ModelStudents {
-    
+public class ModelStudent {
+
     private String dni;
     private String name;
     private String firstSurname;
@@ -56,5 +56,5 @@ public class ModelStudents {
     public void setRegister(int register) {
         this.register = register;
     }
-    
+
 }

@@ -3,15 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projectmvc;
+package main;
 
-import Business.Business;
+import viewtable.ViewTableBook;
+import Business.BusinessBook;
+import Business.BusinessLending;
 import controller.ControllerBooks;
 import controller.ControllerLending;
 import controller.ControllerMain;
 import controller.ControllerStudents;
-import view.ViewInit;
-import connection.connection;
+
+import connection.Connect;
+import controller.ControllerLogin;
+import viewtable.ViewTableLending;
+
 /**
  *
  * @author zyckros
@@ -23,15 +28,15 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        connection.openConnection();
+        
+        Connect.openConnection();
+        
         ControllerBooks controllerBooks = new ControllerBooks();
         ControllerStudents controllerStudent = new ControllerStudents();
         ControllerLending controllerLending = new ControllerLending();
-        Business business = new Business();
-        ViewTable table = new ViewTable(business);
         
         ControllerMain controllerMain = new ControllerMain(controllerBooks, controllerStudent, controllerLending);
-
+        
     }
 
 }

@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projectmvc;
+package viewtable;
 
-import Business.Business;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Business.BusinessBook;
 import javax.swing.table.AbstractTableModel;
 import model.ModelBook;
-import sun.util.logging.PlatformLogger;
+
 
 /**
  *
  * @author zyckros
  */
-public class ViewTable extends AbstractTableModel {
+public class ViewTableBook extends AbstractTableModel {
 
-    Business business;
+    BusinessBook businessBook;
+    
 
-    public ViewTable(Business business) {
-        this.business = business;
+    public ViewTableBook(BusinessBook businessBook) {
+        this.businessBook = businessBook;
 
     }
 
@@ -30,9 +29,9 @@ public class ViewTable extends AbstractTableModel {
 
         int numberofRows = 0;
         try {
-            numberofRows = business.numberOfRecords();
+            numberofRows = businessBook.numberOfRecords();
         } catch (Exception ex) {
-
+               System.err.println("Error on getRowCount: " + ex);
         }
         return numberofRows;
     }
@@ -41,9 +40,9 @@ public class ViewTable extends AbstractTableModel {
     public int getColumnCount() {
         int numberOfColumns = 0;
         try {
-            numberOfColumns = business.numberOfColumns();
+            numberOfColumns = businessBook.numberOfColumns();
         } catch (Exception ex) {
-
+                System.err.println("Error on getColmnCount: " + ex);
         }
         return numberOfColumns;
     }
@@ -53,33 +52,32 @@ public class ViewTable extends AbstractTableModel {
 
         try {
             rowIndex += 1;
-            ModelBook modelbook = new ModelBook();
+            ModelBook modelbook = businessBook.getBook(rowIndex);
 
             switch (columnIndex) {
                 case 0:
                     return modelbook.getCode();
                 case 1:
                     return modelbook.getTitle();
+                case 2:
+                    return modelbook.getAutor();
                 case 3:
                     return modelbook.getEditorial();
                 case 4:
-                    return modelbook.getAutor();
-                case 5:
                     return modelbook.getSignature();
-                case 6:
+                case 5:
                     return modelbook.getState();
-                default:
-                    throw new AssertionError();
+
             }
         } catch (Exception ex) {
-                Logger.getLogger(ViewTable.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println("Error on getVAlueAt: " + ex);
         }
         return "";
     }
 
     @Override
     public String getColumnName(int column){
-        return business.nameOfColumn(column);
+        return businessBook.nameOfColumn(column);
     }
     
     

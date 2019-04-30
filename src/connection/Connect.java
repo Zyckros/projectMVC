@@ -7,17 +7,18 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import com.mysql.jdbc.Driver;
+import java.sql.SQLException;
 
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author zyckros
  */
-public final class connection {
+public final class Connect {
 
     private static final String hostName = Conf.getHostName();
     private static final String port = Conf.getPort();
@@ -30,11 +31,11 @@ public final class connection {
         try {
 
             DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(hostName + ":" + port + "/" + database, user, password);
+            connection = DriverManager.getConnection(hostName + ":" + port + "/" + database + "?zeroDateTimeBehavior=convertToNull", user, password);
             System.out.println(connection);
         } catch (Exception ex) {
 
-            ex.printStackTrace();
+            System.out.println("Fallo de conexion en la base de datos: ");
         }
 
     }
@@ -43,4 +44,12 @@ public final class connection {
         return connection;
     }
 
+    public static void closeConnection(){
+        try {
+            System.out.println("connection close");
+            connection.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Connect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
